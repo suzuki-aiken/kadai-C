@@ -10,12 +10,12 @@ class WordFilter:
         self.hide = 伏字
 
     def censor(self, content):
-        print(content.replace(self.NG, '<censored>'))
+        print(content.replace(self.NG, self.hide))
 
 
 def main():
-    hide_word=input("伏字を入力してください：")
-    my_filter = WordFilter("アーセナル",hide_word)
+    hide_word = input("伏字を入力してください：")
+    my_filter = WordFilter("アーセナル", hide_word)
 
     # "昨日の<？？？？？>の試合アツかった！"
     my_filter.censor("昨日のアーセナルの試合アツかった！")
