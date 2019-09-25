@@ -17,11 +17,7 @@ class WordFilter:
         self.NG = object
 
     def censor(self, content):
-        if f'{self.NG in content}' == 'True':
-            fix_content = content.replace(self.NG, '<censored>')
-            return f'{fix_content}'
-        else:
-            return f'{content}'
+        print(content.replace(self.NG, '<censored>'))
 
 
 def main():
