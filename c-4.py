@@ -3,15 +3,21 @@ C-4: NGワードの複数登録
 NGワードを複数登録できるようにしてください
 """
 
+
 class WordFilter:
     def __init__(self, object):
         self.NG = object
+
     def censor(self, content):
-        print(content.replace(self.NG, '<censored>'))
+        for i in self.NG:
+            content = content.replace(i, '<censored>')
+
+        return print(f'{content}')
+
 
 def main():
-
-    my_filter = WordFilter("アーセナル")
+    NG_list = ["アーセナル", "アツ", "bbb"]
+    my_filter = WordFilter(NG_list)
 
     my_filter.censor("昨日のアーセナルの試合アツかった！")
 
