@@ -5,27 +5,37 @@ NGワードを後から変更できるようにしてください
 
 
 class WordFilter:
-    def __init__(self, object, 伏字):
+    def __init__(self, object):
         self.NG = object
-        self.hide = 伏字
 
     def censor(self, content):
         for i in self.NG:
-            for j in self.hide:
-                content = content.replace(i, j)
+            content = content.replace(i, '<censored>')
 
         return print(f'{content}')
 
 
 def main():
-    NG_list = ["アーセナル", "アツ", "bbb"]
-    NG_list2 = ["アーセナル", "試合", "bbb"]
+    NG_list = []
 
-    my_filter = WordFilter(NG_list, NG_list2)
+    NG_list.append("アーセナル")
 
-    my_filter.censor("昨日のアーセナルの試合アツかった！")
+    # while add_NGword != 'fff':
+    #
+    #     my_filter = WordFilter(NG_list)
+    #
+    #     my_filter.censor("昨日のアーセナルの試合アツかった！")
+    #
+    #     my_filter.censor("昨日のリバプールの試合アツかった！")
+    #
+    #     add_NGword = input("NGワードを追加してください(止める場合は　'fff' を入力):")
+    #
+    #     if add_NGword == 'fff':
+    #         break
+    #
+    #     NG_list.append(add_NGword)
 
-    my_filter.censor("昨日のリバプールの試合アツかった！")
+    print(NG_list)
 
 
 if __name__ == '__main__':
