@@ -20,22 +20,23 @@ def main():
 
     NG_list.append("アーセナル")
 
-    # while add_NGword != 'fff':
-    #
-    #     my_filter = WordFilter(NG_list)
-    #
-    #     my_filter.censor("昨日のアーセナルの試合アツかった！")
-    #
-    #     my_filter.censor("昨日のリバプールの試合アツかった！")
-    #
-    #     add_NGword = input("NGワードを追加してください(止める場合は　'fff' を入力):")
-    #
-    #     if add_NGword == 'fff':
-    #         break
-    #
-    #     NG_list.append(add_NGword)
+    add_NGword='start'
 
-    print(NG_list)
+    while add_NGword != 'fff':
+
+        my_filter = WordFilter(NG_list)
+
+        my_filter.censor("昨日のアーセナルの試合アツかった！")
+
+        my_filter.censor("昨日のリバプールの試合アツかった！")
+
+        add_NGword = input("NGワードを追加してください(止める場合は　'fff' を入力):")
+
+        if add_NGword == 'fff':
+            break
+
+        NG_list.clear()
+        NG_list.append(add_NGword)
 
 
 if __name__ == '__main__':
